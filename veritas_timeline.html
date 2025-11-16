@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Veritas Timeline - Sentinel AI</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #000000;
+            color: #FFFFFF;
+        }
+        .font-mono {
+            font-family: 'Roboto Mono', monospace;
+        }
+        .status-verified { color: #16a34a; }
+        .bg-verified { background-color: #16a34a; }
+        .text-verified-bg { background-color: rgba(22, 163, 74, 0.1); }
+
+        .status-debunked { color: #dc2626; }
+        .bg-debunked { background-color: #dc2626; }
+        .text-debunked-bg { background-color: rgba(220, 38, 38, 0.1); }
+        
+        .status-unconfirmed { color: #facc15; }
+        .bg-unconfirmed { background-color: #facc15; }
+        .text-unconfirmed-bg { background-color: rgba(250, 204, 21, 0.1); }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -1px;
+            top: 24px;
+            bottom: -24px;
+            width: 2px;
+            background-color: #374151;
+        }
+        .timeline-item:last-child::before {
+            display: none;
+        }
+        .filter-btn.active {
+            background-color: #ffffff;
+            color: #000000;
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- Main Container -->
+    <div id="app" class="min-h-screen flex flex-col">
+
+        <!-- Header -->
+        <header class="sticky top-0 z-50 bg-black/70 backdrop-blur-lg border-b border-gray-800">
+            <div class="w-full max-w-7xl mx-auto px-4">
+                <nav class="flex justify-between items-center h-16">
+                    <a href="index.html" class="font-mono text-xl font-bold tracking-widest">SENTINEL AI</a>
+                    <div class="flex items-center gap-4">
+                        <a href="index.html" class="hidden sm:block text-gray-300 hover:text-white transition-colors">Back to Home</a>
+                        <div class="w-px h-6 bg-gray-700 hidden sm:block"></div>
+                        <div class="flex items-center gap-2">
+                            <a href="authentication.html" class="px-3 py-1.5 text-sm font-medium text-gray-300 hover:text-white transition-colors">Login</a>
+                            <a href="authentication.html" class="px-3 py-1.5 text-sm font-semibold text-black bg-white rounded-md hover:bg-gray-200 transition-colors">Sign Up</a>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+        </header>
+
+        <!-- Page Content -->
+        <main class="flex-grow">
+            <!-- Timeline Page: Mumbai Floods -->
+            <div id="timeline-floods" class="page hidden">
+                <section class="w-full max-w-4xl mx-auto px-4 py-10">
+                    <div class="border-b border-gray-800 pb-6 mb-8">
+                        <h1 class="text-4xl font-bold tracking-tight">Mumbai Floods 2025</h1>
+                        <p class="mt-2 text-gray-400">A live, verified timeline of events related to the ongoing heavy rainfall and flooding in the Mumbai Metropolitan Region.</p>
+                        <button class="mt-4 px-5 py-2 border border-gray-700 text-white text-sm font-medium rounded-md hover:bg-gray-800 transition-colors">
+                            Follow for Email Updates
+                        </button>
+                    </div>
+                    <div class="mb-8">
+                        <h2 class="text-lg font-semibold mb-3">Latest Key Updates</h2>
+                        <div class="grid sm:grid-cols-2 gap-4 text-sm">
+                            <div class="border border-gray-800 rounded-lg p-4 bg-gray-900/30">
+                                <p class="status-verified font-semibold">HIGH TIDE ALERT</p>
+                                <p class="text-gray-300 mt-1">BMC has issued a high tide warning for 6:00 PM today.</p>
+                            </div>
+                             <div class="border border-gray-800 rounded-lg p-4 bg-gray-900/30">
+                                <p class="status-debunked font-semibold">PHOTO HOAX</p>
+                                <p class="text-gray-300 mt-1">Images of sharks on highways are fake and from a previous US hurricane.</p>
+                            </div>
+                        </div>
+                         <div class="mt-6 flex items-center gap-2">
+                            <span class="text-sm font-medium text-gray-400">Filter:</span>
+                            <button class="filter-btn active px-3 py-1 text-sm font-medium border border-gray-700 rounded-full hover:bg-gray-800 transition-colors" data-status="all">All</button>
+                            <button class="filter-btn px-3 py-1 text-sm font-medium border border-gray-700 rounded-full hover:bg-gray-800 transition-colors" data-status="verified">Verified</button>
+                            <button class="filter-btn px-3 py-1 text-sm font-medium border border-gray-700 rounded-full hover:bg-gray-800 transition-colors" data-status="debunked">Debunked</button>
+                        </div>
+                    </div>
+                    <div class="timeline-container relative pl-8"></div>
+                </section>
+            </div>
+            
+            <!-- Timeline Page: National Elections -->
+            <div id="timeline-elections" class="page hidden">
+                 <section class="w-full max-w-4xl mx-auto px-4 py-10">
+                    <div class="border-b border-gray-800 pb-6 mb-8">
+                        <h1 class="text-4xl font-bold tracking-tight">National Elections 2025</h1>
+                        <p class="mt-2 text-gray-400">A live, verified timeline tracking claims, results, and key events during the national election period.</p>
+                        <button class="mt-4 px-5 py-2 border border-gray-700 text-white text-sm font-medium rounded-md hover:bg-gray-800 transition-colors">
+                            Follow for Email Updates
+                        </button>
+                    </div>
+                    <div class="mb-8">
+                        <h2 class="text-lg font-semibold mb-3">Latest Key Updates</h2>
+                        <div class="grid sm:grid-cols-2 gap-4 text-sm">
+                            <div class="border border-gray-800 rounded-lg p-4 bg-gray-900/30">
+                                <p class="status-verified font-semibold">VOTER TURNOUT</p>
+                                <p class="text-gray-300 mt-1">Election Commission reports an estimated 62% voter turnout nationwide as of 5 PM.</p>
+                            </div>
+                             <div class="border border-gray-800 rounded-lg p-4 bg-gray-900/30">
+                                <p class="status-debunked font-semibold">BALLOT MISINFORMATION</p>
+                                <p class="text-gray-300 mt-1">Claims of "marked ballots" being discarded have been officially debunked by the ECI.</p>
+                            </div>
+                        </div>
+                         <div class="mt-6 flex items-center gap-2">
+                            <span class="text-sm font-medium text-gray-400">Filter:</span>
+                            <button class="filter-btn active px-3 py-1 text-sm font-medium border border-gray-700 rounded-full hover:bg-gray-800 transition-colors" data-status="all">All</button>
+                            <button class="filter-btn px-3 py-1 text-sm font-medium border border-gray-700 rounded-full hover:bg-gray-800 transition-colors" data-status="verified">Verified</button>
+                            <button class="filter-btn px-3 py-1 text-sm font-medium border border-gray-700 rounded-full hover:bg-gray-800 transition-colors" data-status="debunked">Debunked</button>
+                        </div>
+                    </div>
+                    <div class="timeline-container relative pl-8"></div>
+                </section>
+            </div>
+        </main>
+
+        <!-- Footer -->
+        <footer class="w-full max-w-5xl mx-auto px-4 py-8 mt-10 border-t border-gray-800">
+            <p class="text-center text-gray-500 font-mono text-sm">SENTINEL AI © 2025</p>
+        </footer>
+    </div>
+
+    <script>
+    const floodsData = [
+        { status: 'DEBUNKED', claim: 'Photo shows sharks swimming on the Western Express Highway.', summary: 'This claim is false. The images circulating are a recurring hoax from a previous hurricane in the US.', time: 'October 17, 2025, 5:15 PM', sources: [{ title: 'Snopes Fact-Check', url: '#'}] },
+        { status: 'VERIFIED', claim: 'Is the Andheri subway open?', summary: 'The Andheri subway is temporarily closed to traffic due to severe waterlogging.', time: 'October 17, 2025, 4:30 PM', sources: [{ title: '@MumbaiPolice', url: '#'}, { title: 'Times of India', url: '#'}] },
+        { status: 'UNCONFIRMED', claim: 'Central Line trains are delayed by 30 minutes.', summary: 'There are initial user reports of train services on the Central Line being delayed. Awaiting official confirmation.', time: 'October 17, 2025, 3:55 PM', sources: [{ title: 'User Reports on X', url: '#'}] },
+        { status: 'VERIFIED', claim: 'When is the high tide today?', summary: 'The Brihanmumbai Municipal Corporation (BMC) has issued a high tide warning for 6:00 PM today.', time: 'October 17, 2025, 2:10 PM', sources: [{ title: '@mybmc', url: '#'}] }
+    ];
+
+    const electionsData = [
+        { status: 'VERIFIED', claim: 'What is the voter turnout?', summary: 'The Election Commission of India (ECI) has reported a provisional nationwide voter turnout of 62.3% as of the 5 PM deadline.', time: 'October 17, 2025, 5:45 PM', sources: [{ title: 'ECI Press Release', url: '#'}] },
+        { status: 'DEBUNKED', claim: 'Video shows officials throwing away marked ballots.', summary: 'This claim is false. Fact-checkers have confirmed the video is from a 2022 municipal election in another country and is being shared out of context.', time: 'October 17, 2025, 4:05 PM', sources: [{ title: 'BOOM Live', url: '#'}, { title: 'Alt News', url: '#'}] },
+        { status: 'VERIFIED', claim: 'Has polling been extended in West Bengal?', summary: 'The ECI has officially extended polling by one hour in three constituencies in West Bengal due to long queues.', time: 'October 17, 2025, 3:30 PM', sources: [{ title: 'ECI on X', url: '#'}] },
+        { status: 'UNCONFIRMED', claim: 'Party X is leading in early exit polls.', summary: 'Several media outlets have released early exit poll data. These are projections and not official results; the ECI will release official counts starting tomorrow.', time: 'October 17, 2025, 3:00 PM', sources: [{ title: 'Various Media Reports', url: '#'}] }
+    ];
+    
+    document.addEventListener('DOMContentLoaded', () => {
+        function createTimelineItemHTML(item) {
+            return `
+                <div class="timeline-item relative pb-8" data-status="${item.status.toLowerCase()}">
+                    <div class="absolute left-[-2.05rem] top-[0.6rem] w-5 h-5 rounded-full border-2 border-gray-700 bg-black flex items-center justify-center">
+                        <div class="w-3 h-3 rounded-full bg-${item.status.toLowerCase()}"></div>
+                    </div>
+                    <p class="text-sm text-gray-400">${item.time}</p>
+                    <div class="mt-2 p-4 rounded-lg border border-gray-800 text-${item.status.toLowerCase()}-bg">
+                        <p class="font-semibold status-${item.status.toLowerCase()}">${item.status}</p>
+                        <p class="mt-2 text-gray-400 text-sm font-mono">Claim: "${item.claim}"</p>
+                        <p class="mt-2 text-white">${item.summary}</p>
+                    </div>
+                    <div class="mt-3 text-xs text-gray-400">
+                        <strong>Sources:</strong>
+                        ${item.sources.map(source => `<a href="${source.url}" target="_blank" rel="noopener noreferrer" class="ml-2 text-gray-300 hover:underline">${source.title}</a>`).join(', ')}
+                    </div>
+                </div>`;
+        }
+
+        function populateTimeline(containerSelector, data) {
+            const container = document.querySelector(containerSelector);
+            if(container) {
+                container.innerHTML = data.map(createTimelineItemHTML).join('');
+            }
+        }
+
+        function setupFilters(pageId) {
+            const page = document.getElementById(pageId);
+            if (!page) return;
+            const filterButtons = page.querySelectorAll('.filter-btn');
+            const timelineItems = page.querySelectorAll('.timeline-item');
+
+            filterButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    filterButtons.forEach(btn => btn.classList.remove('active'));
+                    button.classList.add('active');
+                    const status = button.dataset.status;
+                    timelineItems.forEach(item => {
+                        item.style.display = (status === 'all' || item.dataset.status === status) ? 'block' : 'none';
+                    });
+                });
+            });
+        }
+        
+        const urlParams = new URLSearchParams(window.location.search);
+        const crisis = urlParams.get('crisis') || 'floods'; // Default to floods
+
+        const timelineFloods = document.getElementById('timeline-floods');
+        const timelineElections = document.getElementById('timeline-elections');
+
+        if (crisis === 'elections') {
+            timelineElections.classList.remove('hidden');
+            populateTimeline('#timeline-elections .timeline-container', electionsData);
+            setupFilters('timeline-elections');
+        } else {
+            timelineFloods.classList.remove('hidden');
+            populateTimeline('#timeline-floods .timeline-container', floodsData);
+            setupFilters('timeline-floods');
+        }
+    });
+    </script>
+</body>
+</html>

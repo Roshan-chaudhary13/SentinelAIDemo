@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sentinel AI - Clarity in Crisis</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #000000;
+            color: #FFFFFF;
+        }
+        .font-mono {
+            font-family: 'Roboto Mono', monospace;
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- Main Container -->
+    <div id="app" class="min-h-screen flex flex-col">
+
+        <!-- Header -->
+        <header class="sticky top-0 z-50 bg-black/70 backdrop-blur-lg border-b border-gray-800">
+            <div class="w-full max-w-7xl mx-auto px-4">
+                <nav class="flex justify-between items-center h-16">
+                    <a href="index.html" class="font-mono text-xl font-bold tracking-widest">SENTINEL AI</a>
+                    <div class="flex items-center gap-4">
+                        <a href="veritas_timeline.html?crisis=floods" class="hidden sm:block text-gray-300 hover:text-white transition-colors">Live Crises</a>
+                        <div class="w-px h-6 bg-gray-700 hidden sm:block"></div>
+                        <div class="flex items-center gap-2">
+                            <a href="authentication.html" class="px-3 py-1.5 text-sm font-medium text-gray-300 hover:text-white transition-colors">Login</a>
+                            <a href="authentication.html" class="px-3 py-1.5 text-sm font-semibold text-black bg-white rounded-md hover:bg-gray-200 transition-colors">Sign Up</a>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+        </header>
+
+        <!-- Page Content -->
+        <main class="flex-grow">
+            <!-- Hero Section -->
+            <section class="w-full max-w-5xl mx-auto px-4 pt-24 pb-16 text-center flex flex-col items-center">
+                <h1 class="text-5xl md:text-7xl font-black tracking-tighter leading-tight">Clarity in Crisis.</h1>
+                <p class="mt-6 max-w-2xl text-lg text-gray-300">
+                    Sentinel AI is an autonomous AI engine that combats misinformation by delivering a real-time, verified timeline of events. No noise, just verified facts.
+                </p>
+            </section>
+
+            <!-- Trending Topics Dashboard -->
+            <section class="w-full max-w-7xl mx-auto px-4">
+                <h2 class="text-3xl font-bold tracking-tight text-center">Live & Trending Crises</h2>
+                <div class="mt-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <!-- Crisis Card 1 -->
+                    <div class="border border-gray-800 p-6 rounded-lg bg-gray-900/30 flex flex-col">
+                        <h3 class="text-xl font-bold">Mumbai Floods 2025</h3>
+                        <p class="mt-2 text-sm text-gray-400 flex-grow">Monitoring heavy rainfall and infrastructure status across the MMR.</p>
+                        <div class="mt-4 flex items-center gap-6 text-sm">
+                            <div>
+                                <span class="font-bold text-lg">3</span>
+                                <span class="text-gray-400 ml-1">New Updates</span>
+                            </div>
+                            <div>
+                                <span class="font-bold text-lg">12</span>
+                                <span class="text-gray-400 ml-1">Verified Items</span>
+                            </div>
+                        </div>
+                        <a href="veritas_timeline.html?crisis=floods" class="mt-6 w-full text-center px-4 py-2 bg-white text-black font-semibold text-sm rounded-md hover:bg-gray-200 transition-colors">
+                            View Timeline
+                        </a>
+                    </div>
+                    <!-- Crisis Card 2 -->
+                    <div class="border border-gray-800 p-6 rounded-lg bg-gray-900/30 flex flex-col">
+                        <h3 class="text-xl font-bold">National Elections</h3>
+                        <p class="mt-2 text-sm text-gray-400 flex-grow">Tracking and verifying claims related to election integrity and results.</p>
+                         <div class="mt-4 flex items-center gap-6 text-sm">
+                            <div>
+                                <span class="font-bold text-lg">8</span>
+                                <span class="text-gray-400 ml-1">New Updates</span>
+                            </div>
+                            <div>
+                                <span class="font-bold text-lg">45</span>
+                                <span class="text-gray-400 ml-1">Verified Items</span>
+                            </div>
+                        </div>
+                        <a href="veritas_timeline.html?crisis=elections" class="w-full text-center mt-6 px-4 py-2 border border-gray-700 text-white font-semibold text-sm rounded-md hover:bg-gray-800 transition-colors">
+                            View Timeline
+                        </a>
+                    </div>
+                    <!-- Crisis Card 3 -->
+                    <div class="border border-gray-800 p-6 rounded-lg bg-gray-900/30 flex flex-col">
+                        <h3 class="text-xl font-bold">Cyclone Biparjoy Path</h3>
+                        <p class="mt-2 text-sm text-gray-400 flex-grow">Verifying official advisories and debunking rumors about the cyclone's trajectory.</p>
+                         <div class="mt-4 flex items-center gap-6 text-sm">
+                            <div>
+                                <span class="font-bold text-lg">1</span>
+                                <span class="text-gray-400 ml-1">New Updates</span>
+                            </div>
+                            <div>
+                                <span class="font-bold text-lg">9</span>
+                                <span class="text-gray-400 ml-1">Verified Items</span>
+                            </div>
+                        </div>
+                        <a href="veritas_timeline.html?crisis=floods" class="w-full text-center mt-6 px-4 py-2 border border-gray-700 text-white font-semibold text-sm rounded-md hover:bg-gray-800 transition-colors">
+                            View Timeline
+                        </a>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- How It Works Section -->
+            <section class="w-full max-w-5xl mx-auto px-4 py-24">
+                <div class="grid md:grid-cols-2 gap-12 items-center">
+                    <div>
+                        <h2 class="text-3xl font-bold tracking-tight">An Autonomous Verification Engine</h2>
+                        <p class="mt-4 text-gray-300">Sentinel AI is not a passive tool; it's a proactive agent. Our system is built on a sophisticated 5-step pipeline that autonomously finds, verifies, and disseminates information at machine speed, getting ahead of misinformation before it can spread.</p>
+                        <ul class="mt-6 space-y-2 text-gray-400 text-sm font-mono">
+                            <li>1. Ingestion: Scan Sources</li>
+                            <li>2. Extraction: Identify Claims</li>
+                            <li>3. Verification: Deploy Agents</li>
+                            <li>4. Synthesis: Assign Status</li>
+                            <li>5. Dissemination: Update Timeline</li>
+                        </ul>
+                    </div>
+                    <div>
+                       <svg width="100%" viewBox="0 0 440 220" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect x="10" y="10" width="80" height="80" rx="8" stroke="#4B5563" stroke-width="2"/>
+                            <text x="50" y="55" font-family="Roboto Mono" font-size="10" fill="#9CA3AF" text-anchor="middle">Scan</text>
+                            <rect x="10" y="130" width="80" height="80" rx="8" stroke="#4B5563" stroke-width="2"/>
+                            <text x="50" y="175" font-family="Roboto Mono" font-size="10" fill="#9CA3AF" text-anchor="middle">Update</text>
+                            <path d="M50 90V130" stroke="#4B5563" stroke-width="2" stroke-dasharray="4 4"/>
+                            <rect x="120" y="70" width="200" height="80" rx="8" stroke="#9CA3AF" stroke-width="2"/>
+                            <text x="220" y="115" font-family="Roboto Mono" font-size="12" fill="#FFFFFF" text-anchor="middle" font-weight="bold">Agentic Core</text>
+                            <path d="M90 50L120 80" stroke="#4B5563" stroke-width="2"/>
+                            <path d="M90 170L120 140" stroke="#4B5563" stroke-width="2"/>
+                            <rect x="350" y="10" width="80" height="200" rx="8" stroke="#4B5563" stroke-width="2"/>
+                            <text x="390" y="115" font-family="Roboto Mono" font-size="10" fill="#9CA3AF" text-anchor="middle">Timeline</text>
+                            <path d="M320 110H350" stroke="#4B5563" stroke-width="2"/>
+                        </svg>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Feature Section -->
+            <section class="w-full max-w-7xl mx-auto px-4 py-16">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-left">
+                    <div class="border border-gray-800 p-6 rounded-lg bg-gray-900/20">
+                        <div class="flex items-center gap-4">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24" 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-gray-400"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+                            <h3 class="text-lg font-semibold">Autonomous Scanning</h3>
+                        </div>
+                        <p class="mt-3 text-gray-400">Our AI proactively hunts for information across news sites and social media, identifying claims as they emerge.</p>
+                    </div>
+                    <div class="border border-gray-800 p-6 rounded-lg bg-gray-900/20">
+                         <div class="flex items-center gap-4">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-gray-400"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+                            <h3 class="text-lg font-semibold">Agentic Verification</h3>
+                        </div>
+                        <p class="mt-3 text-gray-400">A team of specialized AI agents cross-references sources and evidence to robustly verify or debunk claims.</p>
+                    </div>
+                    <div class="border border-gray-800 p-6 rounded-lg bg-gray-900/20">
+                         <div class="flex items-center gap-4">
+                           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-gray-400"><line x1="12" y1="1" x2="12" y2="23"></line><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg>
+                            <h3 class="text-lg font-semibold">Real-Time Timeline</h3>
+                        </div>
+                        <p class="mt-3 text-gray-400">Receive instant, verified updates on a clean, chronological timeline. Your single source of truth.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Final CTA Section -->
+            <section class="w-full max-w-5xl mx-auto px-4 py-16">
+                <div class="border border-gray-800 rounded-lg p-10 text-center bg-gray-900/20">
+                    <h2 class="text-3xl font-bold tracking-tight">Get Critical Updates. Instantly.</h2>
+                    <p class="mt-4 max-w-xl mx-auto text-gray-300">Create a free account to follow crises that matter to you and receive personalized, real-time email alerts for verified updates and debunked misinformation.</p>
+                    <a href="authentication.html" class="mt-8 inline-block px-8 py-3 bg-white text-black font-semibold rounded-md hover:bg-gray-200 transition-colors">
+                        Create Free Account
+                    </a>
+                </div>
+            </section>
+        </main>
+
+        <!-- Footer -->
+        <footer class="w-full max-w-5xl mx-auto px-4 py-8 mt-10 border-t border-gray-800">
+            <p class="text-center text-gray-500 font-mono text-sm">SENTINEL AI © 2025</p>
+        </footer>
+    </div>
+</body>
+</html>
