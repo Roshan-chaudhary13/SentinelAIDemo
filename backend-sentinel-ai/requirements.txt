@@ -1,0 +1,10 @@
+fastapi
+uvicorn[standard]
+python-dotenv
+sqlalchemy
+psycopg2-binary
+langgraph
+openai
+requests
+beautifulsoup4
+newsapi-python
